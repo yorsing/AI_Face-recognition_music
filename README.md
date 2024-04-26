@@ -23,13 +23,28 @@
 
 * 인공 신경망은 사람의 뇌가 신경 세포(뉴런)로 정보를 처리하는 방식에서 영감을 받았습니다. 각 뉴런은 다른 뉴런으로부터 정보를 받아 처리하고, 그 결과를 다시 다른 뉴런에게 전달합니다. 딥러닝에서의 "딥(deep)"은 이러한 신경망의 계층이 여러 겹(깊게) 쌓여 있다는 의미입니다.
 * 딥러닝 모델은 일반적으로 큰 데이터셋을 필요로 하며, 이 데이터에서 자동으로 특징을 추출하는 학습 과정을 거칩니다. 초기에는 단순한 패턴이나 특징을 인식하고, 점차 더 복잡하고 추상적인 특징을 계층적으로 학습하게 됩니다.
-* 딥러닝의 대표적인 아키텍처로는 이미지 인식에 특화된 합성곱 신경망(CNN)과 시계열 데이터나 텍스트 처리에 특화된 순환 신경망(RNN), 장단기 메모리(LSTM) 등이 있습니다.
+* 딥러닝의 대표적인 아키텍처로는 **이미지 인식**에 특화된 **합성곱 신경망(CNN)** 과 **시계열 데이터나 텍스트 처리** 에 특화된 **순환 신경망(RNN), 장단기 메모리(LSTM)** 등이 있습니다.
+
 ![슬라이드6](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/acd50eae-65e5-496f-815b-2ae7b6ce2890)
 
+* 합성곱 신경망(CNN)은 합성곱 층과 풀링 층을 여러 겹 쌓아 올려 구성하며, 각 층을 거치면서 점점 더 고수준의 특징을 추출합니다.
+* 초기 층은 가장자리, 색상, 질감 같은 기본적인 이미지 특성을 인식하고, 깊은 층으로 갈수록 객체의 부분이나 전체 구조 같은 복잡한 특성을 학습하게 됩니다.
 
 ![슬라이드7](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/19a23076-74ed-43fd-81d4-8b67d71d5da9)
+
+* 합성곱층은 입력 이미지에 대해 N x N 크기의 필터를 통해 슬라이딩하여 각 위치에서 필터와 입력 데이터의 요소별 곱을 계산하고 결과를 합산합니다.
+* 이 과정은 특징 맵(feature map)을 생성하며, 이미지의 중요한 특징을 추출하는 데 도움을 줍니다.
+
 ![슬라이드8](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/de73d1bb-027b-44b1-95ca-128c0d7de504)
+
+* 그 다음은 합성곱 층에서 생성된 특징맵의 각 픽셀 값에 비선형 변환을 적용합니다. 일반적으로 ReLU(Rectified Linear Unit) 함수가 사용되며, 이는 음수 값을 0으로 설정하여 비선형성을 추가합니다.
+* 풀링층(Pooling Layer)에서는 주로 최대 풀링(max pooling) 또는 평균 풀링(average pooling)을 사용하여 특징 맵의 크기를 줄입니다. 이 과정은 이미지의 공간 크기를 줄이면서 중요한 특징을 유지하고, 모델의 계산 부담을 감소시킵니다.
+
 ![슬라이드9](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/1b36bf74-568e-4977-92a5-16675207912e)
+
+* 이러한 기본적인 cnn 구조를 바탕으로 ImageNet 경진대회에서 우승을 차지한 다양한 구조의 신경망이 해마다 등장하면서 2015년 이후엔 인간의 오차율 5%를 뛰어넘는 수준에 이르렀습니다.
+* 저는 2014년에 준우승을 차지한 VGG Net를 사용하였는데요, VGG Net은 옥스포드 대학의 연구팀 Visual Geometry Group에 의해 개발된 모델입니다.
+
 ![슬라이드10](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/bb8d8a79-af5e-4d27-ac83-18ca0c19463f)
 ![슬라이드11](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/54bfb464-56f9-459c-a33e-d55fe0c33513)
 ![슬라이드12](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/790c22d0-83d8-4f8f-a210-0a51f03a40d4)
