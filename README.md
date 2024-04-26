@@ -46,7 +46,14 @@
 * 저는 2014년에 준우승을 차지한 VGG Net를 사용하였는데요, VGG Net은 옥스포드 대학의 연구팀 Visual Geometry Group에 의해 개발된 모델입니다.
 
 ![슬라이드10](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/bb8d8a79-af5e-4d27-ac83-18ca0c19463f)
+
+* VGG 네트워크는 층의 깊이에 따라 16레이어와 19레이어로 나뉘는데, 저는 모델의 전체 용량을 줄이기 위해 vgg16 레이어를 사용하였습니다.
+* 3x3의 작은필터를 사용하여 합성곱 연산을 거치면 이미지의 사이즈가 빠르게 줄어드는 것을 막을 수 있어서 상대적으로 깊은 모델을 만들 수 있고, 연산할 때 발생하는 파라미터의 개수가 줄어들어 학습의 효율성이 뛰어나다는 장점을 가지고 있습니다.
+
 ![슬라이드11](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/54bfb464-56f9-459c-a33e-d55fe0c33513)
+
+* 얼굴표정을 학습시키기 위해 총 4가지 감정을 가진 이미지들을 수집하였습니다. 화난표정, 웃는표정, 무표정, 우는표정으로 구성되어있고 train data는 1170장, test data 293장으로 구성되어 있습니다.
+
 ![슬라이드12](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/790c22d0-83d8-4f8f-a210-0a51f03a40d4)
 ![슬라이드13](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/b98e576d-a5e7-42b6-aa7b-76617ad79752)
 ![슬라이드14](https://github.com/yorsing/AI_Face-recognition_music/assets/48310109/29187ddb-5e57-44f9-8092-4daf787735e5)
